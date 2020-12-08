@@ -79,5 +79,14 @@ public class CalculatorServiceTest {
     public void ignoringNumberIfGreaterThan1000() {
     	assertEquals(3, calculatorService.sum("3,1001"));
     }
+    
+  //Delimiters can be of any length with the following format:
+    // “//[delimiter]\n” for example: “//[***]\n1***2***3”
+    
+    @Test
+    public void return_16() {
+    	assertEquals(16,calculatorService.sum("//[***]\n10***3***3"));
+    }
+    
 
 }
