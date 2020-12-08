@@ -66,7 +66,7 @@ public class CalculatorServiceTest {
     @Test
     public void negativeNumberNotAllowedThrowsException_listing_2_negative_numbers() {
         exceptionRule.expect(NegativesNumbersException.class);
-        exceptionRule.expectMessage("negatives not allowed: -1, -2");
+        exceptionRule.expectMessage("Negative Numbers are not allowed: -1, -2");
         calculatorService.sum("-1,-2");
     }
 }

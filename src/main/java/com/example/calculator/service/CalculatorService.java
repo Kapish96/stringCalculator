@@ -29,12 +29,12 @@ public class CalculatorService {
 		
 		int sum = 0;
 		List<Integer> numberSplit  = numberParserService.fromStringToNumber(numbers);
-		
 		for (Integer integer : numberSplit) {
 			sum+=integer;
 		}
 		return sum;
 	}
+	
 	
 	class NegativesNumbersException extends IllegalArgumentException {
         NegativesNumbersException(String message) {
