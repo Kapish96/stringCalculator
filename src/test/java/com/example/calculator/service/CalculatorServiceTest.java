@@ -33,4 +33,9 @@ public class CalculatorServiceTest {
 	public void twoNumbersNewLineDelimitedReturnSum() {
 		assertEquals(3, calculatorService.sum("1\n2"));
 	}
+	
+	@Test
+	public void threeNumbersDelimitedBothWayReturnSum() {
+		assertEquals(6, calculatorService.sum("1,2,3"));
+	}
 }
