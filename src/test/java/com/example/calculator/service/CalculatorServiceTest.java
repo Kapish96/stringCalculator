@@ -42,4 +42,9 @@ public class CalculatorServiceTest {
 		assertEquals(6, calculatorService.sum("1,2,3"));
 		assertEquals(6, calculatorService.sum("1\n2,3"));
 	}
+	
+	@Test
+	public void numberWithCustomDelimiterReturnSum() {
+		assertEquals(3, calculatorService.sum("//;\\n1;2"));
+	}
 }
