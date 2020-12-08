@@ -17,13 +17,18 @@ public class CalculatorService {
 		if(numbers.length == 1) {
 			Integer.parseInt(input); 
 		} else {
-			return getSum(numbers[0],numbers[1]);
+			return getSum(numbers);
 		}
 			
 		return Integer.parseInt(input);
 	}
 	
-	private int getSum(String num1, String num2) {
-		return Integer.parseInt(num1) + Integer.parseInt(num2);
+	private int getSum(String[] numbers) {
+		
+		int sum = 0;
+		for(int i=0;i<numbers.length;i++) {
+			sum+=Integer.parseInt(numbers[i]); 
+		}
+		return sum;
 	}
 }

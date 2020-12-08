@@ -37,5 +37,6 @@ public class CalculatorServiceTest {
 	@Test
 	public void threeNumbersDelimitedBothWayReturnSum() {
 		assertEquals(6, calculatorService.sum("1,2,3"));
+		assertEquals(6, calculatorService.sum("1\n2,3"));
 	}
 }
