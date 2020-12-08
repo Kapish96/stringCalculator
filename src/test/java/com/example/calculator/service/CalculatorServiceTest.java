@@ -23,4 +23,9 @@ public class CalculatorServiceTest {
 	public void singleValueIsRetured() {
 		assertEquals(1, calculatorService.sum("1"));
 	}
+	
+	@Test
+	public void twoNumbersCommaDelimiterReturnSum() {
+		assertEquals(3, calculatorService.sum("1,2"));
+	}
 }
