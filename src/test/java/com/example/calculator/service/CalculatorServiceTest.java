@@ -28,4 +28,9 @@ public class CalculatorServiceTest {
 	public void twoNumbersCommaDelimiterReturnSum() {
 		assertEquals(3, calculatorService.sum("1,2"));
 	}
+	
+	@Test
+	public void twoNumbersNewLineDelimitedReturnSum() {
+		assertEquals(3, calculatorService.sum("1\n2"));
+	}
 }
