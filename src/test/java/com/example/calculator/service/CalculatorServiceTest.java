@@ -69,4 +69,15 @@ public class CalculatorServiceTest {
         exceptionRule.expectMessage("Negative Numbers are not allowed: -1, -2");
         calculatorService.sum("-1,-2");
     }
+    
+    @Test
+    public void notIgnoringNumbeifLessThanOrEqualTo1000() {
+    	assertEquals(1003, calculatorService.sum("3,1000"));
+    }
+    
+    @Test
+    public void ignoringNumberIfGreaterThan1000() {
+    	assertEquals(3, calculatorService.sum("3,1001"));
+    }
+
 }
