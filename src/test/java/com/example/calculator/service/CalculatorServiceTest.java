@@ -18,4 +18,9 @@ public class CalculatorServiceTest {
 	public void emptyStringReturnZero() {
 		assertEquals(0, calculatorService.sum(""));
 	}
+	
+	@Test
+	public void singleValueIsRetured() {
+		assertEquals(1, calculatorService.sum("1"));
+	}
 }
