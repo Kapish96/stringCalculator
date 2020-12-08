@@ -4,10 +4,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CalculatorService {
+	
+	public final String delimiter = ",|\n";
 
 	public int sum(String input) {
 		
-		String[] numbers = input.split(",");
+		String[] numbers = input.split(delimiter);
 		if(input.isEmpty()) {
 			return 0;
 		} 
