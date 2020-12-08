@@ -33,6 +33,7 @@ public class CalculatorService {
 		List<Integer> numberSplit  = numberParserService.fromStringToNumber(numbers);
 		checkNegativeNumbers(numberSplit);
 		for (Integer integer : numberSplit) {
+			if(integer<=1000)
 			sum+=integer;
 		}
 		return sum;
