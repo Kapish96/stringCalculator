@@ -35,4 +35,10 @@ public class CalculatorService {
 		}
 		return sum;
 	}
+	
+	class NegativesNumbersException extends IllegalArgumentException {
+        NegativesNumbersException(String message) {
+            super(message);
+        }
+    }
 }
