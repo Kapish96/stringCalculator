@@ -8,10 +8,13 @@ import org.junit.Test;
 public class CalculatorServiceTest {
 	
 	private CalculatorService calculatorService;
+	private NumberParserService numberParserService;
 	
 	@Before
 	public void init() {
-		calculatorService = new CalculatorService();
+		numberParserService = new NumberParserService();
+		calculatorService = new CalculatorService(numberParserService);
+		
 	}
 
 	@Test

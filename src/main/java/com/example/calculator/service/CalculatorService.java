@@ -1,33 +1,37 @@
 package com.example.calculator.service;
 
+
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 @Service
 public class CalculatorService {
 	
 	public final String delimiter = ",|\n";
+	
+	private NumberParserService numberParserService;
+	
+	CalculatorService(NumberParserService numberParserService){
+		this.numberParserService = numberParserService;
+	}
 
 	public int sum(String input) {
 		
-		String[] numbers = input.split(delimiter);
 		if(input.isEmpty()) {
 			return 0;
 		} 
 		
-		if(numbers.length == 1) {
-			Integer.parseInt(input); 
-		} else {
-			return getSum(numbers);
-		}
-			
-		return Integer.parseInt(input);
+		return getSum(input);
 	}
 	
-	private int getSum(String[] numbers) {
+	private int getSum(String numbers) {
 		
 		int sum = 0;
-		for(int i=0;i<numbers.length;i++) {
-			sum+=Integer.parseInt(numbers[i]); 
+		List<Integer> numberSplit  = numberParserService.fromStringToNumber(numbers);
+		
+		for (Integer integer : numberSplit) {
+			sum+=integer;
 		}
 		return sum;
 	}
